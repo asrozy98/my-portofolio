@@ -55,6 +55,21 @@ export default function Footer() {
                 </li>
               </ul>
             </div>
+            <div>
+              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                Email
+              </h2>
+              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+                <li className="mb-4">
+                  <Link
+                    href="mailto:faisalasrozy@gmail.com"
+                    className="hover:underline"
+                  >
+                    faisalasrozy@gmail.com
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </footer>

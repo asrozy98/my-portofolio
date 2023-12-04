@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import Image from "next/image";
+import CardProject from "@/app/components/cardProject";
 
 interface MobileData {
   id: number;
@@ -9,6 +9,7 @@ interface MobileData {
   icon: string;
   image: string;
   technology: string;
+  url: string;
 }
 
 const data: MobileData[] = [
@@ -20,6 +21,7 @@ const data: MobileData[] = [
     icon: "/my-portofolio/images/mobile/yes.png",
     image: "/my-portofolio/images/mobile/yes-mobile.png",
     technology: "Laravel",
+    url: "",
   },
   {
     id: 2,
@@ -29,15 +31,17 @@ const data: MobileData[] = [
     icon: "/my-portofolio/images/mobile/yocommerce.png",
     image: "/my-portofolio/images/mobile/yocommerce-mobile.png",
     technology: "React Native & Laravel",
+    url: "",
   },
   {
     id: 3,
-    title: "YOMintra",
+    title: "YOMitra",
     description: "Mobile Webview from YOMitra Website (Yogya Group)",
     color: "bg-blue-600/80",
     icon: "/my-portofolio/images/mobile/yomitra.png",
     image: "/my-portofolio/images/mobile/yomitra-mobile.png",
     technology: "React Native & Laravel",
+    url: "",
   },
   {
     id: 4,
@@ -47,12 +51,13 @@ const data: MobileData[] = [
     icon: "/my-portofolio/images/mobile/79.png",
     image: "/my-portofolio/images/mobile/wr.png",
     technology: "React Native",
+    url: "",
   },
 ];
 
 export default function WorkMobile() {
   return (
-    <main className="flex flex-col justify-around items-center min-h-screen w-full p-2 pb-4 pt-32 sm:p-12 sm:pb-12 md:p-24">
+    <main className="flex flex-col justify-around items-center min-h-screen w-full p-2 pb-4 pt-32 sm:p-12 sm:pb-12 md:p-24 md:pt-48">
       <p className="text-5xl md:text-7xl xl:text-9xl mb-20 font-bold text-center">
         Mobile.
       </p>
@@ -65,52 +70,7 @@ export default function WorkMobile() {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-2 w-full p-2 mt-6">
         {data.map((item) => {
-          return (
-            <div className="w-full p-4" key={item.id}>
-              <div
-                className={
-                  "relative h-48 lg:h-64 xl:h-80 2xl:h-96 backdrop-blur rounded-2xl overflow-hidden cursor-pointer hover:scale-105 ease-out duration-300 " +
-                  item.color
-                }
-              >
-                <div className="absolute top-0 right-0 py-2 px-4">
-                  <p className="pr-1 text-xl xl:text-4xl font-bold text-right overflow-visible">
-                    {item.title}
-                  </p>
-                </div>
-                <div className="flex flex-row justify-between w-full h-full">
-                  <div className="w-3/5">
-                    <div className="h-1/4 pt-4 px-4 xl:p-6">
-                      <Image
-                        className="object-fill backdrop-blur h-8 w-auto lg:h-12 lg:w-auto xl:h-16 xl:w-auto hover:scale-110 ease-in duration-300"
-                        src={item.icon}
-                        width={700}
-                        height={700}
-                        alt={item.title}
-                      />
-                    </div>
-                    <div className="h-3/4 flex flex-col justify-around">
-                      <p className="px-4 lg:px-8 text-sm sm:text-lg md:text-xl xl:text-2xl 3xl:text-3xl">
-                        {item.description}
-                      </p>
-                      <p className="text-md md:text-xl xl:text-2xl text-right">
-                        {item.technology}
-                      </p>
-                    </div>
-                  </div>
-                  <div className="w-2/5 flex flex-col justify-end items-center overflow-hidden pb-4">
-                    <Image
-                      className="object-fill h-3/4 w-auto hover:scale-110 ease-in duration-300"
-                      src={item.image}
-                      width={700}
-                      height={700}
-                      alt={item.title}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          );
+          return <CardProject {...item} key={item.id} />;
         })}
       </div>
     </main>

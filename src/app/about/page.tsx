@@ -3,8 +3,10 @@ import ProfileCard from "../components/profileCard";
 
 export default function About() {
   return (
-    <main className="flex flex-col justify-around items-center min-h-screen w-full p-1 pt-32 sm:p-3 sm:pt-24 sm:pb-12 md:pt-36">
-      <p className="text-7xl mb-10 lg:mb-20 font-bold">I'am Faisal</p>
+    <main className="flex flex-col justify-around items-center min-h-screen w-full p-1 pt-32 sm:p-3 sm:pt-24 sm:pb-12 md:pt-48">
+      <p className="text-5xl md:text-7xl xl:text-9xl mb-10 lg:mb-20 font-bold">
+        I'am Faisal
+      </p>
       <div className="flex flex-row justify-around items-center w-full lg:w-3/4">
         <ProfileCard />
         <div className="w-1/2 sm:w-2/3 lg:max-w-2xl sm:p-6 pt-8 sm:m-0 sm:ml-20">
@@ -12,7 +14,7 @@ export default function About() {
             {/* eslint-disable-next-line react/no-unescaped-entities  */}
             I'm a Developer working remotely from Blitar, East Java.
           </p>
-          <p>
+          <p className="text-md sm:text-lg lg:text-xl">
             {/* eslint-disable-next-line react/no-unescaped-entities  */}
             Over the past 3+ years, I've worked in several of digital companies,
             as front-end, back-end, or fullstack developer. I like learning new
@@ -20,7 +22,7 @@ export default function About() {
           </p>
         </div>
       </div>
-      <div className="relative w-full p-6 pt-32 text-sm">
+      <div className="relative w-full p-6 pt-32 text-sm sm:text-md lg:text-lg">
         <div className="absolute top-60 left-1 sm:left-5 md:left-10 lg:left-16 w-72 sm:w-2/4 lg:w-1/3 mb-6 sm:mb-0">
           <div className="flex items-center">
             <div className="flex flex-row w-full rounded-full bg-lime-300 dark:bg-lime-500 text-black p-4">
@@ -73,14 +75,14 @@ export default function About() {
           Let's collaborate if you're committed to sustainability, education,
           equality, or growing together.
         </p>
-        <p>
+        <p className="text-md sm:text-lg lg:text-xl">
           I believe we should leave this Earth as good as or better than we
           found it for future generations, my goal is to contribute to those
           ideals in whatever way I can. If you feel the same, I'd love to talk.
         </p>
       </div>
       <div className="max-w-4xl p-6 pt-0">
-        <p>
+        <p className="text-md sm:text-lg lg:text-xl">
           Before I became a developer like today, one of my college subjects
           discussed creating a modern website, which made me very excited when I
           studied it and finally, my skills can now be used to develop my own

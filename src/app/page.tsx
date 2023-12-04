@@ -7,14 +7,14 @@ import CardMobile from "./components/cardMobile";
 
 export default function Home() {
   return (
-    <main className="flex flex-col justify-around items-center min-h-screen w-full p-2 pb-4 pt-32 sm:p-12 sm:pb-12 md:p-24">
+    <main className="flex flex-col justify-around items-center min-h-screen w-full p-2 pb-4 pt-32 sm:p-12 sm:pb-12 md:p-24 md:pt-48">
       <p className="text-5xl md:text-7xl xl:text-9xl mb-20 font-bold text-center">
         Hi. I'am Faisal.
         <br />A Developer.
       </p>
       <div className="flex flex-row justify-around w-full">
         <div className="w-full md:max-w-3xl p-0 md:p-6">
-          <p className="mb-4 text-xl font-bold text-center">
+          <p className="mb-4 text-md sm:text-lg lg:text-xl font-bold text-center">
             I'm passionate about crafting experiences that are engaging,
             accessible, and easy to use.
           </p>
