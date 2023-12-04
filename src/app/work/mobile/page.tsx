@@ -17,8 +17,8 @@ const data: MobileData[] = [
     title: "YES Mobile",
     description: "Mobile Webview from Yogya Easy Service (Yogya Group)",
     color: "bg-yellow-400/70",
-    icon: "/images/mobile/yes.png",
-    image: "/images/mobile/yes-mobile.png",
+    icon: "/my-portofolio/images/mobile/yes.png",
+    image: "/my-portofolio/images/mobile/yes-mobile.png",
     technology: "Laravel",
   },
   {
@@ -26,8 +26,8 @@ const data: MobileData[] = [
     title: "YOCommerce",
     description: "Mobile Webview from YOCommerce Website (Yogya Group)",
     color: "bg-orange-600/90",
-    icon: "/images/mobile/yocommerce.png",
-    image: "/images/mobile/yocommerce-mobile.png",
+    icon: "/my-portofolio/images/mobile/yocommerce.png",
+    image: "/my-portofolio/images/mobile/yocommerce-mobile.png",
     technology: "React Native & Laravel",
   },
   {
@@ -35,8 +35,8 @@ const data: MobileData[] = [
     title: "YOMintra",
     description: "Mobile Webview from YOMitra Website (Yogya Group)",
     color: "bg-blue-600/80",
-    icon: "/images/mobile/yomitra.png",
-    image: "/images/mobile/yomitra-mobile.png",
+    icon: "/my-portofolio/images/mobile/yomitra.png",
+    image: "/my-portofolio/images/mobile/yomitra-mobile.png",
     technology: "React Native & Laravel",
   },
   {
@@ -44,8 +44,8 @@ const data: MobileData[] = [
     title: "Working Report 79",
     description: "Mobile App for Daily Work Report (Padepokan 79)",
     color: "bg-blue-500/70",
-    icon: "/images/mobile/79.png",
-    image: "/images/mobile/wr.png",
+    icon: "/my-portofolio/images/mobile/79.png",
+    image: "/my-portofolio/images/mobile/wr.png",
     technology: "React Native",
   },
 ];

@@ -15,7 +15,7 @@ export default function CardWebsite() {
         </p>
         <Image
           className="absolute top-1/2 left-1/3 h-auto max-w-full scale-125 hover:scale-150 ease-in duration-300"
-          src="/images/website.png"
+          src="/my-portofolio/images/website.png"
           width={700}
           height={700}
           alt="Picture of the author"

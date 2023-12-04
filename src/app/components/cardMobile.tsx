@@ -15,7 +15,7 @@ export default function CardMobile() {
         </p>
         <Image
           className="absolute top-1/3 left-1/4 h-auto w-1/2 hover:scale-110 ease-in duration-300"
-          src="/images/mobile.png"
+          src="/my-portofolio/images/mobile.png"
           width={700}
           height={700}
           alt="Picture of the author"

@@ -5,7 +5,7 @@ export default function ProfileCard() {
     <figure className="relative p-8 sm:p-0 w-1/2 sm:w-1/3 md:w-80 md:p-6 max:w-2/6">
       <Image
         className="w-24 h-24 sm:w-24 md:w-48 md:h-48 rounded-full ring-2 ring-white mx-auto"
-        src="/images/profile.jpg"
+        src="/my-portofolio/images/profile.jpg"
         width={500}
         height={500}
         style={{ objectFit: "cover" }}
