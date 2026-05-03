@@ -1,94 +1,198 @@
-/* eslint-disable react/no-unescaped-entities */
-import ProfileCard from "../components/profileCard";
+"use client";
+
+import { useLanguage } from "@/context/LanguageContext";
+import { experienceData } from "@/data/experience";
+import { skillsData } from "@/data/skills";
+import { motion, Variants } from "framer-motion";
+import { Briefcase, Calendar, ChevronRight, MapPin, User } from "lucide-react";
+import Image from "next/image";
 
 export default function About() {
+  const { t, language } = useLanguage();
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+      },
+    },
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5 },
+    },
+  };
+
   return (
-    <main className="flex flex-col justify-around items-center min-h-screen w-full p-1 pt-32 sm:p-3 sm:pt-24 sm:pb-12 md:pt-48">
-      <p className="text-5xl md:text-7xl xl:text-9xl mb-10 lg:mb-20 font-bold">
-        I'am Faisal
-      </p>
-      <div className="flex flex-row justify-around items-center w-full lg:w-3/4">
-        <ProfileCard />
-        <div className="w-1/2 sm:w-2/3 lg:max-w-2xl sm:p-6 pt-8 sm:m-0 sm:ml-20">
-          <p className="sm:pl-5 mb-4 text-xl sm:text-3xl lg:text-4xl font-bold">
-            {/* eslint-disable-next-line react/no-unescaped-entities  */}
-            I'm a Developer working remotely from Blitar, East Java.
-          </p>
-          <p className="text-md sm:text-lg lg:text-xl">
-            {/* eslint-disable-next-line react/no-unescaped-entities  */}
-            Over the past 3+ years, I've worked in several of digital companies,
-            as front-end, back-end, or fullstack developer. I like learning new
-            technology.
-          </p>
-        </div>
-      </div>
-      <div className="relative w-full p-6 pt-32 text-sm sm:text-md lg:text-lg">
-        <div className="absolute top-60 left-1 sm:left-5 md:left-10 lg:left-16 w-72 sm:w-2/4 lg:w-1/3 mb-6 sm:mb-0">
-          <div className="flex items-center">
-            <div className="flex flex-row w-full rounded-full bg-lime-300 dark:bg-lime-500 text-black p-4">
-              <div className="flex-col">
-                <p className="font-bold">Junior Hight School</p>
-                <p className="font-semibold">SMP Negeri 2 Nglegok</p>
-              </div>
-              <div className="flex-auto">
-                <div className="flex h-full justify-end items-center">
-                  <p className="font-bold">2011-2014</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="absolute top-32 left-12 sm:left-1/4 lg:left-1/3 w-72 sm:w-2/4 lg:w-1/3 mb-6 sm:mb-0">
-          <div className="flex items-center">
-            <div className="flex flex-row w-full rounded-full bg-lime-300 dark:bg-lime-500 text-black p-4">
-              <div className="flex-col">
-                <p className="font-bold">Senior Hight School</p>
-                <p className="font-semibold">SMK Negeri 1 Nglegok</p>
-              </div>
-              <div className="flex-auto">
-                <div className="flex h-full justify-end items-center">
-                  <p className="font-bold">2014-2017</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="absolute top-3 right-1 sm:right-5 md:right-10 lg:right-16 w-80 sm:w-3/5 lg:w-2/5 mb-6 sm:mb-0">
-          <div className="flex items-center">
-            <div className="flex flex-row w-full rounded-full bg-lime-300 dark:bg-lime-500 text-black p-4">
-              <div className="flex-col">
-                <p className="font-bold">University</p>
-                <p className="font-semibold">Universitas Islam Balitar</p>
-              </div>
-              <div className="flex-auto">
-                <div className="flex h-full justify-end items-center">
-                  <p className="font-bold">2017-2021</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <main className="flex flex-col items-center min-h-screen w-full relative overflow-x-hidden">
+      {/* Background & Spotlight (Same as Home) */}
+      <div className="fixed inset-0 w-full h-full bg-background -z-50" />
+      <div className="fixed inset-0 bg-[linear-gradient(to_right,#8080801a_1px,transparent_1px),linear-gradient(to_bottom,#8080801a_1px,transparent_1px)] bg-[size:40px_40px] -z-40 [mask-image:radial-gradient(ellipse_80%_70%_at_50%_0%,#000_70%,transparent_100%)]" />
+
+      {/* Background Animated Beams */}
+      <div className="absolute inset-0 overflow-hidden -z-10 opacity-30 pointer-events-none">
+        {[15, 45, 75].map((top, i) => (
+          <div
+            key={i}
+            className="absolute left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent animate-beam"
+            style={{ top: `${top}%`, animationDelay: `${i * 1.2}s` }}
+          />
+        ))}
       </div>
 
-      <div className="max-w-4xl p-6 pt-52">
-        <p className="mb-4 text-xl sm:text-3xl lg:text-4xl font-bold">
-          Let's collaborate if you're committed to sustainability, education,
-          equality, or growing together.
-        </p>
-        <p className="text-md sm:text-lg lg:text-xl">
-          I believe we should leave this Earth as good as or better than we
-          found it for future generations, my goal is to contribute to those
-          ideals in whatever way I can. If you feel the same, I'd love to talk.
-        </p>
-      </div>
-      <div className="max-w-4xl p-6 pt-0">
-        <p className="text-md sm:text-lg lg:text-xl">
-          Before I became a developer like today, one of my college subjects
-          discussed creating a modern website, which made me very excited when I
-          studied it and finally, my skills can now be used to develop my own
-          website.
-        </p>
-      </div>
+      <section className="relative w-full py-32 px-4 sm:px-12 md:px-24 flex flex-col items-center z-10">
+        <div className="absolute top-0 flex w-full justify-center -z-10">
+          <div className="w-[1200px] h-[700px] bg-primary/20 blur-[160px] rounded-full translate-y-[-40%] animate-spotlight opacity-0" />
+        </div>
+
+        <div className="max-w-6xl w-full mt-10">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col lg:flex-row gap-16 items-center mb-32"
+          >
+            <motion.div
+              whileHover={{ scale: 1.52, rotate: -10 }}
+              className="relative w-64 h-64 md:w-80 md:h-80 rounded-[3rem] overflow-hidden border-4 border-primary/20 p-2 bg-background/50 backdrop-blur-md shadow-[0_0_50px_rgba(var(--primary),0.15)] group"
+            >
+              <div className="absolute inset-0 bg-primary/10 group-hover:opacity-0 transition-opacity z-10" />
+              <Image
+                src="/images/profile.jpg"
+                alt="Faisal Asrozy"
+                fill
+                className="object-cover rounded-[2.5rem] grayscale group-hover:grayscale-0 transition-all duration-700"
+                priority
+              />
+            </motion.div>
+
+            <div className="flex-1 text-center lg:text-left">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.2 }}
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-xs font-black uppercase tracking-[0.2em] mb-8 border border-primary/20 shadow-lg shadow-primary/5"
+              >
+                <User className="w-4 h-4" />
+                {t.about.who}
+              </motion.div>
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="text-6xl md:text-8xl font-black mb-8 tracking-tighter leading-none"
+              >
+                Muhammad <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400 animate-border-glow bg-[length:200%_auto]">Faisal</span> Asrozy
+              </motion.h1>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.4 }}
+                className="flex flex-wrap justify-center lg:justify-start gap-8 text-muted-foreground/90 mb-10 font-bold"
+              >
+                <span className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-2xl border border-white/5"><Briefcase className="w-5 h-5 text-primary" /> {t.about.role}</span>
+                <span className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-2xl border border-white/5"><MapPin className="w-5 h-5 text-primary" /> {t.about.location}</span>
+                <span className="flex items-center gap-3 bg-white/5 px-4 py-2 rounded-2xl border border-white/5"><Calendar className="w-5 h-5 text-primary" /> {t.about.yearsExp}</span>
+              </motion.div>
+              <motion.p
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.5 }}
+                className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl font-medium"
+              >
+                {t.about.desc}
+              </motion.p>
+            </div>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+            {/* Skills */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={containerVariants}
+            >
+              <motion.h2 variants={itemVariants} className="text-4xl font-black mb-12 flex items-center gap-5">
+                <div className="w-3 h-12 bg-primary rounded-full shadow-[0_0_20px_rgba(var(--primary),0.6)]" />
+                {t.about.skills}
+              </motion.h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                {skillsData.map((skillGroup, i) => (
+                  <motion.div
+                    key={i}
+                    variants={itemVariants}
+                    whileHover={{ y: -5, borderColor: "rgba(var(--primary), 0.3)" }}
+                    className="p-8 rounded-[2rem] bg-card/30 border border-border/50 backdrop-blur-md transition-all duration-300 relative group overflow-hidden"
+                  >
+                    <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                      <ChevronRight className="w-16 h-16 text-primary rotate-[-45deg]" />
+                    </div>
+                    <h3 className="text-xs font-black uppercase tracking-[0.3em] text-primary mb-6">{skillGroup.category}</h3>
+                    <div className="flex flex-wrap gap-3">
+                      {skillGroup.items.map((skill, j) => (
+                        <span key={j} className="px-4 py-1.5 rounded-xl bg-primary/5 border border-primary/10 text-xs font-black hover:bg-primary/20 hover:border-primary/30 transition-all cursor-default">
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Experience Summary */}
+            <motion.div
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-100px" }}
+              variants={containerVariants}
+            >
+              <motion.h2 variants={itemVariants} className="text-4xl font-black mb-12 flex items-center gap-5">
+                <div className="w-3 h-12 bg-primary rounded-full shadow-[0_0_20px_rgba(var(--primary),0.6)]" />
+                {t.about.experience}
+              </motion.h2>
+              <div className="relative pl-12 space-y-16 border-l-2 border-primary/10 ml-6">
+                {experienceData.map((exp, index) => (
+                  <motion.div
+                    key={exp.id}
+                    variants={itemVariants}
+                    className="relative group"
+                  >
+                    <motion.div
+                      whileInView={{ scale: [0.8, 1.2, 1] }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className={`absolute -left-[61px] top-1.5 w-6 h-6 rounded-full border-4 border-background z-10 transition-all duration-500 group-hover:scale-125 ${exp.isCurrent
+                        ? "bg-primary shadow-[0_0_20px_rgba(var(--primary),0.6)]"
+                        : "bg-muted group-hover:bg-primary/50"
+                        }`}
+                    />
+                    <div className="absolute -left-[61px] top-1.5 w-6 h-6 rounded-full bg-primary/20 animate-ping opacity-0 group-hover:opacity-100" />
+
+                    <div className="space-y-2">
+                      <h3 className="font-black text-3xl tracking-tight leading-tight group-hover:text-primary transition-colors">{exp.company}</h3>
+                      <div className="flex items-center gap-3">
+                        <p className="text-lg font-bold text-foreground/90">{exp.role}</p>
+                        <div className="h-1 w-1 rounded-full bg-muted-foreground/30" />
+                        <p className="text-sm text-primary font-black uppercase tracking-widest">{exp.period[language]}</p>
+                      </div>
+                      <p className="text-muted-foreground text-lg leading-relaxed pt-2 group-hover:text-foreground/80 transition-colors">
+                        {exp.description[language]}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

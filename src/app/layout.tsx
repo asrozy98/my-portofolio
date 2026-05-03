@@ -1,8 +1,12 @@
+import { LanguageProvider } from "@/context/LanguageContext";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import NavigationBar from "./components/navigationBar";
+import { Geist, Inter } from "next/font/google";
 import Footer from "./components/footer";
+import NavigationBar from "./components/navigationBar";
+import "./globals.css";
+
+const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,13 +21,28 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={(inter.className, "dark:bg-green-600/30")}>
-        <div className="fixed z-10 w-full pt-7">
-          <NavigationBar />
-        </div>
-        {children}
-        <Footer />
+    <html lang="en" className={cn("dark font-sans scroll-smooth", geist.variable)}>
+      <body className={cn(inter.className, "min-h-screen bg-background font-sans antialiased selection:bg-primary/30")}>
+        <LanguageProvider>
+          <div className="fixed top-0 z-50 w-full pt-4">
+            <NavigationBar />
+          </div>
+          <div className="relative flex min-h-screen flex-col">
+            {children}
+            <div className="absolute inset-0 overflow-hidden -z-10 opacity-50">
+              {[10, 30, 50, 70, 90].map((top, i) => (
+                <div
+                  key={i}
+                  className="absolute left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-primary/60 to-transparent animate-beam"
+                  style={{ top: `${top}%`, animationDelay: `${i * 0.4}s` }}
+                />
+              ))}
+              <div className="absolute left-[20%] top-0 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-pulse delay-500" />
+              <div className="absolute left-[80%] top-0 w-px h-full bg-gradient-to-b from-transparent via-primary/30 to-transparent animate-pulse delay-1000" />
+            </div>
+          </div>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

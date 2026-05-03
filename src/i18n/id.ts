@@ -1,0 +1,52 @@
+export const id = {
+  nav: {
+    home: "Beranda",
+    about: "Tentang",
+  },
+  hero: {
+    badge: "Software Developer",
+    hi: "Halo, Saya",
+    build: "Membangun pengalaman digital yang berkesan.",
+    desc: "Saya seorang Software Developer asal Blitar dengan pengalaman lebih dari 6 tahun. Fokus saya adalah membangun aplikasi yang skalabel, API yang handal, dan tampilan antarmuka yang asik buat dipake.",
+    viewWeb: "Lihat Proyek Web",
+    viewMobile: "Lihat Proyek Mobile",
+  },
+  about: {
+    title: "Tentang Saya",
+    subtitle: "Mengenal Siapa Saya Lebih Dekat",
+    who: "Siapa Saya",
+    desc: "Halo! Saya Faisal. Saya sangat antusias mengikuti perkembangan teknologi terbaru dan tren industri software. Keahlian utama saya ada di pengembangan aplikasi web dan mobile modern yang punya performa kencang.",
+    skills: "Keahlian Utama",
+    experience: "Pengalaman Kerja",
+    projectsDone: "Proyek Selesai",
+    years: "6+ Tahun",
+    yearsExp: "Pengalaman 6+ Thn",
+    location: "Blitar, Indonesia",
+    role: "Software Developer",
+    present: "Sekarang",
+    exp1: "Mengerjakan berbagai proyek berintensitas tinggi sebagai Front-End & Full-Stack Developer.",
+    exp2: "Pengembangan Full-Stack yang berfokus pada solusi pembayaran digital.",
+  },
+  featured: {
+    badge: "Portofolio",
+    title: "Proyek Pilihan",
+    desc: "Ini adalah beberapa karya terbaik saya yang menunjukkan keahlian saya di berbagai teknologi.",
+    viewAll: "Lihat Semua Karya",
+    website: "Website",
+    mobile: "Aplikasi Mobile",
+  },
+  projects: {
+    webTitle: "Pengembangan Web",
+    webDesc: "Front-End • Back-End • Integrasi API • Prototipe UI/UX",
+    mobileTitle: "Aplikasi Mobile",
+    mobileDesc: "React Native • Integrasi API • Prototipe UI/UX",
+    viewPreview: "LIHAT PRATINJAU",
+  },
+  footer: {
+    desc: "Membangun solusi digital yang tangguh dengan teknologi modern. Selalu semangat buat belajar hal baru dan menghadapi tantangan unik.",
+    connect: "Media Sosial",
+    contact: "Kontak",
+    rights: "Seluruh hak cipta dilindungi.",
+    builtWith: "Dibuat menggunakan",
+  }
+};

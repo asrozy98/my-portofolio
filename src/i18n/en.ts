@@ -1,0 +1,52 @@
+export const en = {
+  nav: {
+    home: "Home",
+    about: "About",
+  },
+  hero: {
+    badge: "Software Developer",
+    hi: "Hi. I'm",
+    build: "I build digital experiences.",
+    desc: "A Software Developer from Blitar with 6+ years of experience in front-end, back-end, and full-stack development. I'm passionate about crafting scalable applications, robust APIs, and engaging user interfaces.",
+    viewWeb: "View Web Projects",
+    viewMobile: "View Mobile Projects",
+  },
+  about: {
+    title: "About Me",
+    subtitle: "Getting to Know Me Closer",
+    who: "Who I Am",
+    desc: "I'm a dedicated Software Developer committed to staying abreast of technological developments and industry trends. I specialize in building modern, high-performance web and mobile applications.",
+    skills: "Core Skills",
+    experience: "Experience",
+    projectsDone: "Projects Done",
+    years: "6+ Years",
+    yearsExp: "6+ Years Exp",
+    location: "Blitar, Indonesia",
+    role: "Software Developer",
+    present: "Present",
+    exp1: "Working on various high-impact projects as a Front-End & Full-Stack Developer.",
+    exp2: "Full-Stack development focusing on digital payment solutions.",
+  },
+  featured: {
+    badge: "Portfolio",
+    title: "Featured Projects",
+    desc: "Some of my best work showcasing my expertise in various technologies.",
+    viewAll: "View All Projects",
+    website: "Website",
+    mobile: "Mobile App",
+  },
+  projects: {
+    webTitle: "Web Development",
+    webDesc: "Front-End • Back-End • API Integration • UI/UX Prototyping",
+    mobileTitle: "Mobile Apps",
+    mobileDesc: "React Native • API Integration • UI/UX Prototyping",
+    viewPreview: "VIEW PREVIEW",
+  },
+  footer: {
+    desc: "Building robust digital solutions with modern technologies. Always eager to learn and tackle new challenges.",
+    connect: "Connect",
+    contact: "Contact",
+    rights: "All Rights Reserved.",
+    builtWith: "Built with",
+  }
+};
