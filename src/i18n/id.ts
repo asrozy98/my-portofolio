@@ -23,6 +23,7 @@ export const id = {
     yearsExp: "Pengalaman 6+ Thn",
     location: "Blitar, Indonesia",
     role: "Software Developer",
+    education: "Pendidikan",
     present: "Sekarang",
     exp1: "Mengerjakan berbagai proyek berintensitas tinggi sebagai Front-End & Full-Stack Developer.",
     exp2: "Pengembangan Full-Stack yang berfokus pada solusi pembayaran digital.",
@@ -48,5 +49,6 @@ export const id = {
     contact: "Kontak",
     rights: "Seluruh hak cipta dilindungi.",
     builtWith: "Dibuat menggunakan",
+    email: "Email Saya"
   }
 };

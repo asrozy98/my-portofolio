@@ -21,6 +21,9 @@ export default function Home() {
       <div className="absolute top-0 flex w-full justify-center -z-10">
         <div className="w-[1200px] h-[800px] bg-primary/20 blur-[160px] rounded-full translate-y-[-40%] animate-spotlight opacity-0" />
       </div>
+      <div className="absolute right-0 bottom-0 -z-50">
+        <div className="w-[600px] h-[600px] bg-primary/20 blur-[160px] rounded-full translate-y-[-40%] animate-spotlight opacity-0" />
+      </div>
 
       {/* Hero Section */}
       <section className="relative flex flex-col items-center justify-center w-full min-h-screen px-4 sm:px-12 md:px-24 overflow-hidden">
@@ -29,10 +32,10 @@ export default function Home() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-bold shadow-[0_0_20px_rgba(var(--primary),0.2)] backdrop-blur-md"
+            className="inline-flex items-center gap-2 px-4 py-2 mt-10 mb-8 rounded-full bg-primary/10 text-primary border border-primary/20 text-sm font-bold shadow-[0_0_20px_rgba(var(--primary),0.2)] backdrop-blur-md"
           >
             <Terminal className="w-4 h-4 animate-pulse" />
-            <span>{t.hero.badge}</span>
+            <span className="animate-pulse">{t.hero.badge}</span>
           </motion.div>
 
           <motion.h1
@@ -86,15 +89,15 @@ export default function Home() {
             {t.hero.viewMobile}
           </Link>
         </motion.div>
-
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground/50"
+          className="md:absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground/50 mt-10"
         >
           <div className="w-1 h-16 rounded-full bg-gradient-to-b from-primary to-transparent animate-pulse" />
         </motion.div>
+
       </section>
 
       {/* About Section */}
@@ -115,7 +118,7 @@ export default function Home() {
               <Link href="/about" className="group block">
                 <h2 className="text-4xl md:text-6xl font-black mb-8 leading-tight tracking-tight group-hover:text-primary transition-colors cursor-pointer">
                   {t.about.subtitle.split(" ").map((word, i) => (
-                    <span key={i} className={word === "Siapa" || word === "Saya" || word === "Know" || word === "Me" ? "text-primary group-hover:text-foreground" : ""}>
+                    <span key={i} className={word === "Siapa" || word === "Saya" || word === "Know" || word === "Me" ? "text-primary group-hover:text-foreground animate-pulse" : ""}>
                       {word}{" "}
                     </span>
                   ))}
@@ -127,11 +130,11 @@ export default function Home() {
 
               <div className="grid grid-cols-2 gap-8">
                 <div className="space-y-1">
-                  <div className="text-6xl font-black text-primary">{experienceData.length - 1}+</div>
+                  <div className="text-6xl font-black text-primary animate-pulse">{experienceData.length - 1}+</div>
                   <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest">{t.about.experience}</div>
                 </div>
                 <div className="space-y-1">
-                  <div className="text-6xl font-black text-primary">{projectsData.length - 1}+</div>
+                  <div className="text-6xl font-black text-primary animate-pulse">{projectsData.length - 1}+</div>
                   <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest">{t.about.projectsDone}</div>
                 </div>
               </div>
@@ -181,7 +184,7 @@ export default function Home() {
                 <Sparkles className="w-3 h-3" />
                 {t.featured.badge}
               </div>
-              <h2 className="text-4xl md:text-6xl font-black tracking-tight">{t.featured.title}</h2>
+              <h2 className="text-4xl md:text-6xl font-black tracking-tight animate-pulse">{t.featured.title}</h2>
               <p className="text-xl text-muted-foreground max-w-2xl font-medium">{t.featured.desc}</p>
             </div>
           </motion.div>

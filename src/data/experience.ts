@@ -44,7 +44,7 @@ export const experienceData: ExperienceData[] = [
   },
   {
     id: 3,
-    company: "NashTa Group",
+    company: "PT. NashTa Global Utama",
     role: "Front End Web Developer",
     period: {
       en: "Sep 2024 — Jan 2025",
@@ -57,7 +57,7 @@ export const experienceData: ExperienceData[] = [
   },
   {
     id: 4,
-    company: "Padepokan Tujuh Sembilan",
+    company: "PT. Padepokan Tujuh Sembilan",
     role: "Software Developer",
     period: {
       en: "Apr 2022 — Present",
@@ -97,7 +97,7 @@ export const experienceData: ExperienceData[] = [
   },
   {
     id: 7,
-    company: "PT Nukupay Teknologi Indonesia",
+    company: "PT. Nukupay Teknologi Indonesia",
     role: "Full Stack Developer",
     period: {
       en: "Oct 2019 — Apr 2021",

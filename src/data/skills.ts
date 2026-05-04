@@ -18,7 +18,7 @@ export const skillsData: SkillGroup[] = [
   },
   {
     category: "Back-end",
-    items: ["Laravel", "Express.js", "NestJS", "MySQL", "PostgreSQL", "Redis", "Node.js", "Sails.js", "Go (Basic)", "Spring Boot (Basic)"]
+    items: ["Laravel", "Lumen", "Express.js", "NestJS", "MySQL", "PostgreSQL", "Redis", "Node.js", "Sails.js", "Go (Basic)", "Spring Boot (Basic)"]
   },
   {
     category: "Mobile",
@@ -26,7 +26,11 @@ export const skillsData: SkillGroup[] = [
   },
   {
     category: "Tools",
-    items: ["Git", "Docker", "Podman", "Figma", "Postman", "Insomnia", "Visual Studio Code", "DBeaver", "LM Studio", "Open WebUI", "Antigravity"]
+    items: ["Git", "Docker", "Podman", "Figma", "Postman", "Insomnia", "Swagger", "Visual Studio Code", "DBeaver",]
+  },
+  {
+    category: "Others",
+    items: ["Power App", "Power Automate", "Power BI", "LM Studio", "Open WebUI", "Antigravity"]
   }
 ];
 

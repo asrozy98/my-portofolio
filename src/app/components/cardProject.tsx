@@ -30,7 +30,7 @@ export default function CardProject({ onImageClick, ...item }: CardProjectProps)
       className="w-full h-full"
     >
       <Card
-        className={`group relative h-[500px] lg:h-[550px] overflow-hidden border-border/40 bg-card/40 backdrop-blur-sm hover:border-primary/40 transition-all duration-500 shadow-2xl hover:shadow-primary/10`}
+        className={`group relative h-[450px] lg:h-[500px] overflow-hidden border-border/40 bg-card/40 backdrop-blur-sm hover:border-primary/40 transition-all duration-500 shadow-2xl hover:shadow-primary/10`}
       >
         {/* Glow effect on hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0" />
@@ -70,7 +70,7 @@ export default function CardProject({ onImageClick, ...item }: CardProjectProps)
                   </Badge>
                 ))}
               </div>
-              <h3 className="text-2xl lg:text-4xl font-black mb-3 group-hover:text-primary transition-colors tracking-tight">
+              <h3 className="text-2xl lg:text-4xl font-black mb-3 group-hover:text-primary transition-colors tracking-tight animate-pulse">
                 {item.title}
               </h3>
               <p className="text-base text-muted-foreground/80 line-clamp-3 mb-2 leading-relaxed">
@@ -81,7 +81,7 @@ export default function CardProject({ onImageClick, ...item }: CardProjectProps)
 
           {/* Image Container with Reveal Effect */}
           <div
-            className="h-[40%] relative overflow-hidden bg-muted/20 border-t border-border/20 cursor-zoom-in"
+            className="h-[40%] relative overflow-hidden bg-muted/20 border-t border-border/20 cursor-zoom-in hover:scale-110 ease-in duration-300"
             onClick={() => onImageClick?.(item.image)}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-background/20 to-transparent z-10" />

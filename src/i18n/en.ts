@@ -23,6 +23,7 @@ export const en = {
     yearsExp: "6+ Years Exp",
     location: "Blitar, Indonesia",
     role: "Software Developer",
+    education: "Education",
     present: "Present",
     exp1: "Working on various high-impact projects as a Front-End & Full-Stack Developer.",
     exp2: "Full-Stack development focusing on digital payment solutions.",
@@ -48,5 +49,6 @@ export const en = {
     contact: "Contact",
     rights: "All Rights Reserved.",
     builtWith: "Built with",
+    email: "Email Me"
   }
 };

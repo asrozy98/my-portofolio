@@ -1,8 +1,8 @@
 "use client";
 
-import React, { createContext, useContext, useEffect, useState } from "react";
 import { en } from "@/i18n/en";
 import { id } from "@/i18n/id";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 type Language = "en" | "id";
 type Translations = typeof en;
