@@ -7,6 +7,7 @@ import { ProjectData } from "@/data/projects";
 import { motion } from "framer-motion";
 import { ArrowUpRight, Search } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface CardProjectProps extends Omit<ProjectData, "description"> {
   index: number;
@@ -14,12 +15,18 @@ interface CardProjectProps extends Omit<ProjectData, "description"> {
   onImageClick?: (img: string) => void;
 }
 
-export default function CardProject({ onImageClick, ...item }: CardProjectProps) {
+export default function CardProject({
+  onImageClick,
+  ...item
+}: CardProjectProps) {
   const { language, t } = useLanguage();
 
-  const descText = typeof item.description === 'string'
-    ? item.description
-    : item.description ? item.description[language] || item.description.en : "";
+  const descText =
+    typeof item.description === "string"
+      ? item.description
+      : item.description
+        ? item.description[language] || item.description.en
+        : "";
 
   return (
     <motion.div
@@ -30,7 +37,7 @@ export default function CardProject({ onImageClick, ...item }: CardProjectProps)
       className="w-full h-full"
     >
       <Card
-        className={`group relative h-[450px] lg:h-[500px] overflow-hidden border-border/40 bg-card/40 backdrop-blur-sm hover:border-primary/40 transition-all duration-500 shadow-2xl hover:shadow-primary/10`}
+        className={`group relative h-[450px] lg:h-[500px] overflow-hidden border-border/40 bg-card/40 backdrop-blur-sm hover:border-primary/40 transition-all duration-500 shadow-2xl hover:shadow-primary/10 pb-0`}
       >
         {/* Glow effect on hover */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-0" />
@@ -39,9 +46,9 @@ export default function CardProject({ onImageClick, ...item }: CardProjectProps)
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000 ease-in-out" />
 
         <CardContent className="p-0 h-full flex flex-col relative z-10">
-          <div className="p-8 xl:p-10 flex flex-col justify-between h-[60%]">
+          <div className="p-8 xl:p-10 flex flex-col justify-between gap-2 h-[60%]">
             <div className="flex justify-between items-start">
-              <div className="relative w-12 h-12 bg-white/80 backdrop-blur-md p-0.5 rounded-xl border border-border shadow-inner group-hover:scale-110 transition-transform duration-500">
+              <div className="relative w-12 h-12 bg-white/80 backdrop-blur-md p-0.5 rounded-xl border border-border shadow-inner group-hover:scale-110 transition-transform duration-500 overflow-auto">
                 <Image
                   className="h-full w-full object-contain"
                   src={item.icon}
@@ -65,13 +72,23 @@ export default function CardProject({ onImageClick, ...item }: CardProjectProps)
             <div className="mt-auto">
               <div className="flex flex-wrap gap-2 mb-4">
                 {item.technology.split(" & ").map((tech, i) => (
-                  <Badge key={i} variant="outline" className="border-primary/20 text-primary/80 bg-primary/5 px-3 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-tighter">
+                  <Badge
+                    key={i}
+                    variant="outline"
+                    className="border-primary/20 text-primary/80 bg-primary/5 px-3 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-tighter"
+                  >
                     {tech}
                   </Badge>
                 ))}
               </div>
               <h3 className="text-2xl lg:text-4xl font-black mb-3 group-hover:text-primary transition-colors tracking-tight animate-pulse">
-                {item.title}
+                {item.url ? (
+                  <Link href={item.url} target="_blank">
+                    {item.title}
+                  </Link>
+                ) : (
+                  item.title
+                )}
               </h3>
               <p className="text-base text-muted-foreground/80 line-clamp-3 mb-2 leading-relaxed">
                 {descText}
