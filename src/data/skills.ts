@@ -14,7 +14,7 @@ export interface FeaturedSkill {
 export const skillsData: SkillGroup[] = [
   {
     category: "Front-end",
-    items: ["Next.js", "React JS", "TypeScript", "Tailwind CSS", "Bootstrap", "Ant Design", "Material UI", "Shadcn UI"]
+    items: ["Next.js", "React JS", "TypeScript", "Tailwind CSS", "Bootstrap", "Ant Design", "Material UI", "Hero UI", "Shadcn UI"]
   },
   {
     category: "Back-end",

@@ -4,9 +4,10 @@ import type { Metadata } from "next";
 import { Geist, Inter } from "next/font/google";
 import Footer from "./components/footer";
 import NavigationBar from "./components/navigationBar";
+import SkillsBackground from "./components/skillsBackground";
 import "./globals.css";
 
-const geist = Geist({ subsets: ['latin'], variable: '--font-sans' });
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,14 +22,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={cn("dark font-sans scroll-smooth", geist.variable)}>
-      <body className={cn(inter.className, "min-h-screen bg-background font-sans antialiased selection:bg-primary/30")}>
+    <html
+      lang="en"
+      className={cn("dark font-sans scroll-smooth", geist.variable)}
+    >
+      <body
+        className={cn(
+          inter.className,
+          "min-h-screen bg-background font-sans antialiased selection:bg-primary/30",
+        )}
+      >
         <LanguageProvider>
           <div className="fixed top-0 z-50 w-full pt-4">
             <NavigationBar />
           </div>
           <div className="relative flex min-h-screen flex-col">
             {children}
+            <SkillsBackground />
             <div className="absolute inset-0 overflow-hidden -z-10 opacity-50">
               {[10, 30, 50, 70, 90].map((top, i) => (
                 <div
